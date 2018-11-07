@@ -1,0 +1,7 @@
+postgresql:
+  image: postgres:9.4
+  ports:
+    - 15432:5432
+  volumes:
+    - ~/develop/workspace/sts/idev/postgres/data:/var/lib/postgresql/data
+    

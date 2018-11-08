@@ -27,4 +27,8 @@ public class IdeaService {
 	public Idea save(Idea entity) {
 		return ideaRepository.save(entity);
 	}
+	
+	public void delete(long id) {
+		ideaRepository.deleteById(id);
+	}
 }

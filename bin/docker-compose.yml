@@ -3,5 +3,5 @@ postgresql:
   ports:
     - 15432:5432
   volumes:
-    - ~/work/postgres/idev/data:/var/lib/postgresql/data
+    - ~/develop/workspace/sts/idev/postgres/data:/var/lib/postgresql/data
     

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.idev.app.response.ErrorResponse;
+import com.idev.util.DateUtil;
+import com.idev.util.JsonUtil;
 
 @RestControllerAdvice
 public class RestExceptionHandler {
@@ -24,7 +26,7 @@ public class RestExceptionHandler {
   @ExceptionHandler(ResourceException.class)
   public ResponseEntity<ErrorResponse> notReadable(ResourceException e, HttpServletRequest req) {
     return new ResponseEntity<ErrorResponse>(
-        new ErrorResponse(DateUtil.now().getTime(), e.getStatus().value(), e.getMessage()), e.getStatus().value());
+        new ErrorResponse(DateUtil.now().getTime(), e.getStatus().value(), e.getMessage()), e.getStatus());
   }
 
   @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -35,7 +37,7 @@ public class RestExceptionHandler {
       errors.put(f.getField(), f.getDefaultMessage());
     });
     return new ResponseEntity<ErrorResponse>(
-        new ErrorResponse(DateUtil.now().getTime(), HttpStatus.BAD_REQUEST.value(), JsonUtil.use().bean2string(errors)),
+        new ErrorResponse(DateUtil.now().getTime(), HttpStatus.BAD_REQUEST.value(), JsonUtil.bean2string(errors)),
         HttpStatus.BAD_REQUEST);
   }
 

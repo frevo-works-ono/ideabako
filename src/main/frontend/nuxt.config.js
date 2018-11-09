@@ -49,7 +49,7 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseURL: 'http://localhost:8080'
+    baseURL: 'https://ideabako.herokuapp.com'
   },
 
   /*

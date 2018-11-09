@@ -28,6 +28,11 @@ public class IdeaResource {
 		return ideaService.findAll();
 	}
 	
+	@RequestMapping(value = "{id}",method = RequestMethod.GET)
+	public Idea find(@PathVariable long id) {
+		return ideaService.find(id);
+	}
+	
 	@RequestMapping(value = "{id}",method = RequestMethod.PUT)
 	public Idea update(@PathVariable long id,@RequestBody Idea input) {
 		Idea entity = ideaService.find(id);

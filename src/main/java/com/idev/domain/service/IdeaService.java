@@ -3,6 +3,8 @@ package com.idev.domain.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +19,7 @@ public class IdeaService {
 	private IdeaRepository ideaRepository;
 	
 	public List<Idea> findAll(){
-		return ideaRepository.findAll();
+		return ideaRepository.findAll(new Sort(Direction.DESC,"updateDate"));
 	}
 	
 	public Idea find(long id) {

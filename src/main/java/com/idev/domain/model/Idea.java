@@ -17,6 +17,8 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.idev.util.DateUtil;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -68,5 +70,12 @@ public class Idea implements Serializable{
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
 	private Date updateDate;
+	
+	public String getUpdateDateStr() {
+		if(updateDate == null) {
+			return "";
+		}
+		return DateUtil.format(updateDate,"yyyy-MM-dd HH:mm");
+	}
 	
 }

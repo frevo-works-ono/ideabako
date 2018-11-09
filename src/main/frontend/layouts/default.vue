@@ -8,8 +8,6 @@
     >
       
       <v-toolbar-title v-text="title"/>
-     
-      </v-btn>
     </v-toolbar>
     <v-content>
       <v-container>
@@ -35,7 +33,7 @@
       :fixed="fixed"
       app
     >
-      <span>&copy; 2017</span>
+      <span>&copy; 2018</span>
     </v-footer>
   </v-app>
 </template>
@@ -54,7 +52,7 @@
         miniVariant: false,
         right: true,
         rightDrawer: false,
-        title: 'IDEV'
+        title: 'IDEV（idea + develop）'
       }
     }
   }

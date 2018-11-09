@@ -55,30 +55,29 @@
           <v-container grid-list-md>
             <v-form ref="form" v-model="valid" lazy-validation>
             <v-layout wrap>
-              
-              <v-flex xs6>
+              <v-flex xs12>
                 <v-text-field label="氏名" required v-model="form.userName" :rules="requiredRules"></v-text-field>
               </v-flex>
-              <v-flex xs6>
-                <v-text-field label="製品名" required v-model="form.productName" :rules="requiredRules"></v-text-field>
+              <v-flex xs12>
+                <v-text-field label="目的" required v-model="form.goal" :rules="requiredRules" suffix="したい"></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-text-field label="製品カテゴリ" required v-model="form.category" :rules="requiredRules"></v-text-field>
+                <v-text-field label="ターゲット" required v-model="form.target" :rules="requiredRules" suffix="向けの"></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-text-field label="目的" required v-model="form.goal" :rules="requiredRules"></v-text-field>
+                <v-text-field label="製品名" required v-model="form.productName" :rules="requiredRules" suffix="というプロダクトは、"></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-text-field label="ターゲット" required v-model="form.target" :rules="requiredRules"></v-text-field>
+                <v-text-field label="製品カテゴリ" required v-model="form.category" :rules="requiredRules" suffix="です。"></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-text-field label="メリット" required v-model="form.merit" :rules="requiredRules"></v-text-field>
+                <v-text-field label="メリット" required v-model="form.merit" :rules="requiredRules" prefix="これは" suffix="ができ、"></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-text-field label="競合製品" required v-model="form.conflict" :rules="requiredRules"></v-text-field>
+                <v-text-field label="競合製品" required v-model="form.conflict" :rules="requiredRules" suffix="と違って、"></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-text-field label="差別化ポイント" required v-model="form.diff" :rules="requiredRules"></v-text-field>
+                <v-text-field label="差別化ポイント" required v-model="form.diff" :rules="requiredRules" suffix="が備わっている。"></v-text-field>
               </v-flex>
               
             </v-layout>
